@@ -3,7 +3,7 @@ Version:        1.8.5
 Release:        1
 Summary:        SpiderMonkey JavaScript and WebAssembly library
 Url:            https://ftp.mozilla.org/pub/js//
-Source0:        js185-1.0.0.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 Patch1:         0001-build-aarch64.patch
 License:        MPLv1.1
 BuildRequires:  autoconf
