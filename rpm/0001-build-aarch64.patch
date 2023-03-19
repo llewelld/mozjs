@@ -1,5 +1,5 @@
-diff -ruN js-1.8.5-original/js/src/assembler/wtf/Platform.h js-1.8.5/js/src/assembler/wtf/Platform.h
---- js-1.8.5-original/js/src/assembler/wtf/Platform.h	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/assembler/wtf/Platform.h js-1.8.5/js/src/assembler/wtf/Platform.h
+--- js-1.8.5/js/src/assembler/wtf/Platform.h	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/assembler/wtf/Platform.h	2023-03-18 21:33:11.761286470 +0000
 @@ -179,7 +179,8 @@
  
@@ -38,8 +38,8 @@ diff -ruN js-1.8.5-original/js/src/assembler/wtf/Platform.h js-1.8.5/js/src/asse
   || WTF_CPU_ARM_THUMB2 \
   || WTF_CPU_X86)
  #define ENABLE_YARR_JIT 1
-diff -ruN js-1.8.5-original/js/src/jsapi.cpp js-1.8.5/js/src/jsapi.cpp
---- js-1.8.5-original/js/src/jsapi.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jsapi.cpp js-1.8.5/js/src/jsapi.cpp
+--- js-1.8.5/js/src/jsapi.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jsapi.cpp	2023-03-18 21:00:24.873972665 +0000
 @@ -3985,7 +3985,7 @@
      AutoIdVector props(cx);
@@ -50,8 +50,8 @@ diff -ruN js-1.8.5-original/js/src/jsapi.cpp js-1.8.5/js/src/jsapi.cpp
      for (size_t n = 0; n < size_t(ida->length); ++n)
          JS_ASSERT(js_CheckForStringIndex(ida->vector[n]) == ida->vector[n]);
      return ida;
-diff -ruN js-1.8.5-original/js/src/jsfun.cpp js-1.8.5/js/src/jsfun.cpp
---- js-1.8.5-original/js/src/jsfun.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jsfun.cpp js-1.8.5/js/src/jsfun.cpp
+--- js-1.8.5/js/src/jsfun.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jsfun.cpp	2023-03-18 12:43:03.714834122 +0000
 @@ -2051,7 +2051,7 @@
  
@@ -71,8 +71,8 @@ diff -ruN js-1.8.5-original/js/src/jsfun.cpp js-1.8.5/js/src/jsfun.cpp
          shape = funobj->nativeLookup(id);
      }
      JS_ASSERT(!shape->configurable());
-diff -ruN js-1.8.5-original/js/src/jsiter.cpp js-1.8.5/js/src/jsiter.cpp
---- js-1.8.5-original/js/src/jsiter.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jsiter.cpp js-1.8.5/js/src/jsiter.cpp
+--- js-1.8.5/js/src/jsiter.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jsiter.cpp	2023-03-18 12:44:59.988000280 +0000
 @@ -425,7 +425,7 @@
           */
@@ -83,8 +83,8 @@ diff -ruN js-1.8.5-original/js/src/jsiter.cpp js-1.8.5/js/src/jsiter.cpp
          obj->init(cx, &js_IteratorClass, NULL, NULL, NULL, false);
          obj->setMap(cx->compartment->emptyEnumeratorShape);
          return obj;
-diff -ruN js-1.8.5-original/js/src/jsparse.cpp js-1.8.5/js/src/jsparse.cpp
---- js-1.8.5-original/js/src/jsparse.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jsparse.cpp js-1.8.5/js/src/jsparse.cpp
+--- js-1.8.5/js/src/jsparse.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jsparse.cpp	2023-03-18 12:46:48.141106093 +0000
 @@ -3352,7 +3352,7 @@
      if (!outertc->inFunction() && bodyLevel && funAtom && !lambda && outertc->compiling()) {
@@ -95,8 +95,8 @@ diff -ruN js-1.8.5-original/js/src/jsparse.cpp js-1.8.5/js/src/jsparse.cpp
      }
  
      pn->pn_blockid = outertc->blockid();
-diff -ruN js-1.8.5-original/js/src/jsstr.cpp js-1.8.5/js/src/jsstr.cpp
---- js-1.8.5-original/js/src/jsstr.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jsstr.cpp js-1.8.5/js/src/jsstr.cpp
+--- js-1.8.5/js/src/jsstr.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jsstr.cpp	2023-03-18 12:48:46.966339768 +0000
 @@ -1734,7 +1734,7 @@
          if (flat) {
@@ -107,8 +107,8 @@ diff -ruN js-1.8.5-original/js/src/jsstr.cpp js-1.8.5/js/src/jsstr.cpp
          } else {
              patstr = fm.patstr;
          }
-diff -ruN js-1.8.5-original/js/src/jstypedarray.cpp js-1.8.5/js/src/jstypedarray.cpp
---- js-1.8.5-original/js/src/jstypedarray.cpp	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jstypedarray.cpp js-1.8.5/js/src/jstypedarray.cpp
+--- js-1.8.5/js/src/jstypedarray.cpp	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jstypedarray.cpp	2023-03-18 12:57:46.336094437 +0000
 @@ -1334,7 +1334,7 @@
          if (size != 0 && count >= INT32_MAX / size) {
@@ -128,8 +128,8 @@ diff -ruN js-1.8.5-original/js/src/jstypedarray.cpp js-1.8.5/js/src/jstypedarray
      }
  }
  
-diff -ruN js-1.8.5-original/js/src/jstypes.h js-1.8.5/js/src/jstypes.h
---- js-1.8.5-original/js/src/jstypes.h	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/jstypes.h js-1.8.5/js/src/jstypes.h
+--- js-1.8.5/js/src/jstypes.h	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/jstypes.h	2023-03-18 12:51:42.608191059 +0000
 @@ -391,8 +391,8 @@
  **      just as you would C int-valued conditions.
@@ -142,8 +142,8 @@ diff -ruN js-1.8.5-original/js/src/jstypes.h js-1.8.5/js/src/jstypes.h
  /*
  ** Special: JS_NEITHER is used by the tracer to have tri-state booleans.
  ** This should not be used in new code.
-diff -ruN js-1.8.5-original/js/src/Makefile.in js-1.8.5/js/src/Makefile.in
---- js-1.8.5-original/js/src/Makefile.in	2011-03-31 20:08:36.000000000 +0100
+diff -ruN js-1.8.5/js/src/Makefile.in js-1.8.5/js/src/Makefile.in
+--- js-1.8.5/js/src/Makefile.in	2011-03-31 20:08:36.000000000 +0100
 +++ js-1.8.5/js/src/Makefile.in	2023-03-19 12:50:26.783576540 +0000
 @@ -888,8 +888,8 @@
  ifeq (,$(HOST_BIN_SUFFIX))
