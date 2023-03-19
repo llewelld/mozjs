@@ -24,7 +24,7 @@ Development headers and libraries for SpiderMonkey (mozjs), the JavaScript and W
 %autosetup -p1 -n js-1.8.5
 
 %build
-cd js-1.8.5/js/src
+cd js/src
 %configure \
     --disable-methodjit \
     --disable-monoic \
