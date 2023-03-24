@@ -3,7 +3,7 @@ Version:        1.8.5
 Release:        1
 Summary:        SpiderMonkey JavaScript and WebAssembly library
 Url:            https://ftp.mozilla.org/pub/js
-Source0:        https://ftp.mozilla.org/pub/js/js185-1.0.0.tar.gz
+Source0:        %{name}-%{version}.tar.bz2
 Patch1:         0001-build-aarch64.patch
 License:        MPLv1.1
 BuildRequires:  autoconf
@@ -21,10 +21,10 @@ Requires:       %{name} = %{version}
 Development headers and libraries for SpiderMonkey (mozjs), the JavaScript and WebAssembly implementation library of the Mozilla Firefox web browser. The implementation behaviour is defined by the ECMAScript and WebAssembly specifications.
 
 %prep
-%autosetup -p0 -n js-1.8.5
+%autosetup -p1 -n %{name}-%{version}/js-1.8.5
 
 %build
-cd js-1.8.5/js/src
+cd js/src
 %configure \
     --disable-methodjit \
     --disable-monoic \
@@ -35,7 +35,7 @@ cd js-1.8.5/js/src
 %make_build
 
 %install
-cd js-1.8.5/js/src
+cd js/src
 %make_install
 
 %post -p /sbin/ldconfig
