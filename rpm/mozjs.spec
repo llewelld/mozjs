@@ -21,10 +21,10 @@ Requires:       %{name} = %{version}
 Development headers and libraries for SpiderMonkey (mozjs), the JavaScript and WebAssembly implementation library of the Mozilla Firefox web browser. The implementation behaviour is defined by the ECMAScript and WebAssembly specifications.
 
 %prep
-%autosetup -p1 -n js-1.8.5
+%autosetup -p0 -n js-1.8.5
 
 %build
-cd js/src
+cd js-1.8.5/js/src
 %configure \
     --disable-methodjit \
     --disable-monoic \
@@ -35,7 +35,7 @@ cd js/src
 %make_build
 
 %install
-cd js/src
+cd js-1.8.5/js/src
 %make_install
 
 %post -p /sbin/ldconfig
