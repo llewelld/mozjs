@@ -28,6 +28,9 @@ Development headers and libraries for SpiderMonkey (mozjs), the JavaScript and W
 %build
 cd js/src
 %configure \
+    --host=i486-meego-linux-gnu \
+    --build=i486-meego-linux-gnu \
+    --target=i486-meego-linux-gnu \
     --disable-methodjit \
     --disable-monoic \
     --disable-polyic \
