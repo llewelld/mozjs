@@ -7,6 +7,7 @@ Source0:        %{name}-%{version}.tar.bz2
 Patch1:         0001-build-sailfishos.patch
 License:        MPLv1.1
 BuildRequires:  autoconf
+BuildRequires:  libtool
 BuildRequires:  python
 BuildRequires:  zip
 
