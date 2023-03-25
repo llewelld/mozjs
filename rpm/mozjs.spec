@@ -10,6 +10,7 @@ BuildRequires:  autoconf
 BuildRequires:  libtool
 BuildRequires:  python
 BuildRequires:  zip
+BuildRequires:  gcc
 
 %description
 SpiderMonkey (mozjs) is the JavaScript and WebAssembly implementation library of the Mozilla Firefox web browser. The implementation behaviour is defined by the ECMAScript and WebAssembly specifications.
