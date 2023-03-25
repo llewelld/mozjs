@@ -4,7 +4,7 @@ Release:        1
 Summary:        SpiderMonkey JavaScript and WebAssembly library
 Url:            https://ftp.mozilla.org/pub/js
 Source0:        %{name}-%{version}.tar.bz2
-Patch1:         0001-build-aarch64.patch
+Patch1:         0001-build-sailfishos.patch
 License:        MPLv1.1
 BuildRequires:  autoconf
 BuildRequires:  python
@@ -21,7 +21,7 @@ Requires:       %{name} = %{version}
 Development headers and libraries for SpiderMonkey (mozjs), the JavaScript and WebAssembly implementation library of the Mozilla Firefox web browser. The implementation behaviour is defined by the ECMAScript and WebAssembly specifications.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}/js-1.8.5
+%autosetup -p2 -n %{name}-%{version}/js-1.8.5
 
 %build
 cd js/src
@@ -30,6 +30,7 @@ cd js/src
     --disable-monoic \
     --disable-polyic \
     --disable-tracejit \
+    --disable-yarrjit \
     --libdir=%{_libdir}
 
 %make_build
